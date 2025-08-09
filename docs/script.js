@@ -116,7 +116,7 @@ function create_videos3() {
     videostrailer = document.getElementById("videostrailer3")
 
     const videolist = [
-        "assets/videos/cp_pados_planet5.mp4",
+        "assets/videos/cp_logo_white.mp4",
     ]
 
     for (var videopath of videolist) {
@@ -130,7 +130,7 @@ function create_videos3() {
         video.height = 600;
         // set video speed to that is takes 4 seconds to play the video
         video.onloadedmetadata = function () {
-            this.playbackRate = this.duration/6;
+            this.playbackRate = this.duration;
         }
         videostrailer.appendChild(video);
     }
