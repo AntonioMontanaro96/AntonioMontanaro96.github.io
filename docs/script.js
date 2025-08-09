@@ -37,9 +37,9 @@ function footnote_node(footnotes) {
 }
 
 function make_site(paper) {
-    document.title = paper.title;
-    get("title").textContent = paper.title;
-    get("conference").textContent = paper.conference;
+    document.title = "AI is not the end is just the beginning";
+    // get("title").textContent = paper.title;
+    // get("conference").textContent = paper.conference;
 
     // Randomly swap the first two authors
     if (Math.random() < 0.5) {
