@@ -189,8 +189,8 @@ function create_videos() {
     const videostrailer = document.getElementById("videostrailer");
 
     const mediaList = [
-        "assets/videos/flower_frames_modif.PNG",
-        "assets/videos/short_cubism.mp4",
+        "assets/videos/sea_feame_modif.PNG",
+        "assets/videos/flowerflow.jpg",
         "assets/videos/flower_frames_modif.PNG",
     ];
 
@@ -221,6 +221,45 @@ function create_videos() {
         }
     });
 }
+
+function create_videos2() {
+    const videostrailer = document.getElementById("videostrailer2");
+
+    const mediaList = [
+        "assets/videos/blacksculpts_modif.PNG",
+        "assets/videos/img_to_3d.mp4",
+        "assets/videos/marm_apollo.png",
+    ];
+
+    mediaList.forEach(mediaPath => {
+        const ext = mediaPath.split('.').pop().toLowerCase();
+
+        let element;
+        if (ext === "mp4") {
+            element = document.createElement("video");
+            element.src = mediaPath;
+            element.autoplay = true;
+            element.loop = true;
+            element.muted = true;
+            element.controls = false;
+            element.onloadedmetadata = function () {
+                this.playbackRate = this.duration/4; // your speed setting
+            };
+        } else if (["png", "jpg", "jpeg", "gif", "webp"].includes(ext)) {
+            element = document.createElement("img");
+            element.src = mediaPath;
+            element.alt = "Media preview";
+        }
+
+        if (element) {
+            element.width = 300;
+            element.height = 300;
+            videostrailer.appendChild(element);
+        }
+    });
+}
+
+
 // </script>
 
 fetch("./paper.json").then(response => response.json()).then(json => make_site(json));
@@ -229,3 +268,4 @@ sliders = document.getElementsByClassName("slider-wrapper")
 for (var i = 0; i < sliders.length; i++) set_slider(sliders[i])
 
 create_videos();
+create_videos2();

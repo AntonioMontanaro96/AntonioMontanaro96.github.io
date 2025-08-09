@@ -127,6 +127,20 @@
     object-fit: cover;
     border-radius: 8px;
 }
+#videostrailer2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+#videostrailer2 video,
+#videostrailer2 img {
+    display: block;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 #methodoverview {
     text-align: justify;
     max-width: 960px;
