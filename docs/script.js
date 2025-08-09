@@ -110,44 +110,118 @@ function set_slider(root) {
         slidesContainer.scrollLeft -= slideWidth;
     });
 }
+// function create_videos() {
+//     // For each video in assets/videos create a video element
+//     // add them to the videostrailer div
+//     videostrailer = document.getElementById("videostrailer")
+
+//     const videolist = [
+//         "assets/videos/flower_frames_modif.PNG",
+//         "assets/videos/short_cubism.mp4",
+//         "assets/videos/flower_frames_modif.PNG",
+//     ]
+
+//     for (var videopath of videolist) {
+//         var video = document.createElement("video");
+//         video.src = videopath;
+//         video.autoplay = true;
+//         video.loop = true;
+//         video.muted = true;
+//         video.controls = false;
+//         video.width = 300;
+//         video.height = 300;
+//         // set video speed to that is takes 4 seconds to play the video
+//         video.onloadedmetadata = function () {
+//             this.playbackRate = this.duration;
+//         }
+//         videostrailer.appendChild(video);
+//     }
+
+// }
+
+// function create_videos() {
+//     const videostrailer = document.getElementById("videostrailer");
+
+//     const filelist = [
+//         "assets/videos/flower_frames_modif.PNG",
+//         "assets/videos/short_cubism.mp4",
+//         "assets/videos/flower_frames_modif.PNG",
+//     ];
+
+//     for (let filepath of filelist) {
+//         let ext = filepath.split('.').pop().toLowerCase();
+
+//         if (ext === "mp4" || ext === "webm" || ext === "ogg") {
+//             // Create video
+//             let video = document.createElement("video");
+//             video.src = filepath;
+//             video.autoplay = true;
+//             video.loop = true;
+//             video.muted = true;
+//             video.controls = false;
+//             video.width = 300;
+//             video.height = 300;
+
+//             // Prevent right-click save
+//             video.addEventListener('contextmenu', e => e.preventDefault());
+
+//             // Playback speed tweak
+//             video.onloadedmetadata = function () {
+//                 this.playbackRate = this.duration;
+//             }
+
+//             videostrailer.appendChild(video);
+//         } else {
+//             // Create image
+//             let img = document.createElement("img");
+//             img.src = filepath;
+//             img.width = 300;
+//             img.height = 300;
+//             img.style.display = "block";
+
+//             videostrailer.appendChild(img);
+//         }
+//     }
+// }
+
+
 function create_videos() {
-    // For each video in assets/videos create a video element
-    // add them to the videostrailer div
-    videostrailer = document.getElementById("videostrailer")
+    const videostrailer = document.getElementById("videostrailer");
 
-    const videolist = [
-        "assets/videos/birds_MotionCraft.mp4",
-        "assets/videos/dragons_MotionCraft.mp4",
-        "assets/videos/earth_MotionCraft.mp4",
-        "assets/videos/glass_MotionCraft.mp4",
-        "assets/videos/meltingman_MotionCraft.mp4",
-        "assets/videos/satellite_MotionCraft.mp4",
-        // "assets/videos/birds_T2V0.mp4",
-        // "assets/videos/dragons_T2V0.mp4",
-        // "assets/videos/earth_T2V0.mp4",
-        // "assets/videos/glass_T2V0.mp4",
-        // "assets/videos/meltingman_T2V0.mp4",
-        // "assets/videos/satellite_T2V0.mp4",
-    ]
+    const mediaList = [
+        "assets/videos/flower_frames_modif.PNG",
+        "assets/videos/short_cubism.mp4",
+        "assets/videos/flower_frames_modif.PNG",
+    ];
 
-    for (var videopath of videolist) {
-        var video = document.createElement("video");
-        video.src = videopath;
-        video.autoplay = true;
-        video.loop = true;
-        video.muted = true;
-        video.controls = true;
-        video.width = 300;
-        video.height = 300;
-        // set video speed to that is takes 4 seconds to play the video
-        video.onloadedmetadata = function () {
-            this.playbackRate = this.duration / 4;
+    mediaList.forEach(mediaPath => {
+        const ext = mediaPath.split('.').pop().toLowerCase();
+
+        let element;
+        if (ext === "mp4") {
+            element = document.createElement("video");
+            element.src = mediaPath;
+            element.autoplay = true;
+            element.loop = true;
+            element.muted = true;
+            element.controls = false;
+            element.onloadedmetadata = function () {
+                this.playbackRate = this.duration; // your speed setting
+            };
+        } else if (["png", "jpg", "jpeg", "gif", "webp"].includes(ext)) {
+            element = document.createElement("img");
+            element.src = mediaPath;
+            element.alt = "Media preview";
         }
-        videostrailer.appendChild(video);
-    }
 
+        if (element) {
+            element.width = 300;
+            element.height = 300;
+            videostrailer.appendChild(element);
+        }
+    });
 }
-
+// </script>
 
 fetch("./paper.json").then(response => response.json()).then(json => make_site(json));
 
