@@ -110,79 +110,77 @@ function set_slider(root) {
         slidesContainer.scrollLeft -= slideWidth;
     });
 }
-// function create_videos() {
-//     // For each video in assets/videos create a video element
-//     // add them to the videostrailer div
-//     videostrailer = document.getElementById("videostrailer")
+function create_videos3() {
+    // For each video in assets/videos create a video element
+    // add them to the videostrailer div
+    videostrailer = document.getElementById("videostrailer3")
 
-//     const videolist = [
-//         "assets/videos/flower_frames_modif.PNG",
-//         "assets/videos/short_cubism.mp4",
-//         "assets/videos/flower_frames_modif.PNG",
-//     ]
+    const videolist = [
+        "assets/videos/cp_pados_planet5.mp4",
+    ]
 
-//     for (var videopath of videolist) {
-//         var video = document.createElement("video");
-//         video.src = videopath;
-//         video.autoplay = true;
-//         video.loop = true;
-//         video.muted = true;
-//         video.controls = false;
-//         video.width = 300;
-//         video.height = 300;
-//         // set video speed to that is takes 4 seconds to play the video
-//         video.onloadedmetadata = function () {
-//             this.playbackRate = this.duration;
-//         }
-//         videostrailer.appendChild(video);
-//     }
+    for (var videopath of videolist) {
+        var video = document.createElement("video");
+        video.src = videopath;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.controls = true;
+        video.width = 600;
+        video.height = 600;
+        // set video speed to that is takes 4 seconds to play the video
+        video.onloadedmetadata = function () {
+            this.playbackRate = this.duration/6;
+        }
+        videostrailer.appendChild(video);
+    }
 
-// }
+}
 
-// function create_videos() {
-//     const videostrailer = document.getElementById("videostrailer");
+function create_videos() {
+    const videostrailer = document.getElementById("videostrailer");
 
-//     const filelist = [
-//         "assets/videos/flower_frames_modif.PNG",
-//         "assets/videos/short_cubism.mp4",
-//         "assets/videos/flower_frames_modif.PNG",
-//     ];
+    const filelist = [
+        "assets/videos/flower_frames_modif.PNG",
+        "assets/videos/short_cubism.mp4",
+        "assets/videos/flower_frames_modif.PNG",
+    ];
 
-//     for (let filepath of filelist) {
-//         let ext = filepath.split('.').pop().toLowerCase();
+    for (let filepath of filelist) {
+        let ext = filepath.split('.').pop().toLowerCase();
 
-//         if (ext === "mp4" || ext === "webm" || ext === "ogg") {
-//             // Create video
-//             let video = document.createElement("video");
-//             video.src = filepath;
-//             video.autoplay = true;
-//             video.loop = true;
-//             video.muted = true;
-//             video.controls = false;
-//             video.width = 300;
-//             video.height = 300;
+        if (ext === "mp4" || ext === "webm" || ext === "ogg") {
+            // Create video
+            let video = document.createElement("video");
+            video.src = filepath;
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.controls = false;
+            video.width = 300;
+            video.height = 300;
 
-//             // Prevent right-click save
-//             video.addEventListener('contextmenu', e => e.preventDefault());
+            // Prevent right-click save
+            video.addEventListener('contextmenu', e => e.preventDefault());
 
-//             // Playback speed tweak
-//             video.onloadedmetadata = function () {
-//                 this.playbackRate = this.duration;
-//             }
+            // Playback speed tweak
+            video.onloadedmetadata = function () {
+                this.playbackRate = this.duration;
+            }
 
-//             videostrailer.appendChild(video);
-//         } else {
-//             // Create image
-//             let img = document.createElement("img");
-//             img.src = filepath;
-//             img.width = 300;
-//             img.height = 300;
-//             img.style.display = "block";
+            videostrailer.appendChild(video);
+        } else {
+            // Create image
+            let img = document.createElement("img");
+            img.src = filepath;
+            img.width = 300;
+            img.height = 300;
+            img.style.display = "block";
 
-//             videostrailer.appendChild(img);
-//         }
-//     }
-// }
+            videostrailer.appendChild(img);
+        }
+    }
+}
 
 
 function create_videos() {
@@ -216,7 +214,7 @@ function create_videos() {
 
         if (element) {
             element.width = 300;
-            element.height = 300;
+            element.height = 500;
             videostrailer.appendChild(element);
         }
     });
@@ -269,3 +267,4 @@ for (var i = 0; i < sliders.length; i++) set_slider(sliders[i])
 
 create_videos();
 create_videos2();
+create_videos3();

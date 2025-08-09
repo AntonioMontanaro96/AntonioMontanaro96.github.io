@@ -109,10 +109,10 @@
     margin: auto;
 }
 
-/* #videostrailer {
+#videostrailer3 {
     max-width: 960px;
     margin: auto;
-} */
+}
 #videostrailer {
     display: flex;
     flex-wrap: wrap;
