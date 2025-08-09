@@ -173,7 +173,7 @@ function create_videos() {
             // Create image
             let img = document.createElement("img");
             img.src = filepath;
-            img.width = 300;
+            img.width = 1000;
             img.height = 300;
             img.style.display = "block";
 
@@ -187,9 +187,9 @@ function create_videos() {
     const videostrailer = document.getElementById("videostrailer");
 
     const mediaList = [
-        "assets/videos/sea_feame_modif.PNG",
+        "assets/videos/colorf.png",
         "assets/videos/flowerflow.jpg",
-        "assets/videos/flower_frames_modif.PNG",
+        "assets/videos/colorcube.png",
     ];
 
     mediaList.forEach(mediaPath => {

@@ -110,7 +110,7 @@
 }
 
 #videostrailer3 {
-    max-width: 960px;
+    max-width: 2000px;
     margin: auto;
 }
 #videostrailer {
@@ -122,7 +122,7 @@
 #videostrailer video,
 #videostrailer img {
     display: block;
-    width: 300px;
+    width: 500px;
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
@@ -136,7 +136,7 @@
 #videostrailer2 video,
 #videostrailer2 img {
     display: block;
-    width: 300px;
+    width: 500px;
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
