@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cinghio's Jersey Run</title>
+<title>Cinghio e la Maglia</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@400;600&display=swap">
 <style>
   /* Layout: one centered court-floor maze, HUD above, d-pad below. Single dark arcade look by choice. */
@@ -129,10 +129,10 @@
 
 </head>
 <body>
-<h1>Cinghio's Jersey Run</h1>
-<p class="hint">Cinghio has a basketball jersey to deliver. Bring it to <b>Anto</b>, and watch out for <b>Gira</b>. Use the arrow keys, swipe, or the buttons.</p>
+<h1>Cinghio e la Maglia</h1>
+<p class="hint">Cinghio deve consegnare una maglia da basket. Portala ad <b>Anto</b> e stai attento a <b>Gira</b>. Usa le frecce, scorri col dito o premi i pulsanti.</p>
 
-<div class="court" id="court" aria-label="Maze">
+<div class="court" id="court" aria-label="Labirinto">
   <div class="sprite anto" id="anto"><img src="anto.webp" alt="Anto"><span class="tag">Anto</span></div>
   <div class="sprite gira" id="gira"><img src="gira.png" alt="Gira"><span class="tag">Gira</span></div>
   <div class="sprite player" id="player">
@@ -145,15 +145,15 @@
   <div class="overlay" id="overlay" hidden>
     <img id="ovImg" alt="">
     <p id="ovText"></p>
-    <button class="again" id="again" type="button">Play again</button>
+    <button class="again" id="again" type="button">Gioca ancora</button>
   </div>
 </div>
 
 <div class="pad">
-  <button id="up" type="button" aria-label="Up">↑</button>
-  <button id="left" type="button" aria-label="Left">←</button>
-  <button id="down" type="button" aria-label="Down">↓</button>
-  <button id="right" type="button" aria-label="Right">→</button>
+  <button id="up" type="button" aria-label="Su">↑</button>
+  <button id="left" type="button" aria-label="Sinistra">←</button>
+  <button id="down" type="button" aria-label="Giù">↓</button>
+  <button id="right" type="button" aria-label="Destra">→</button>
 </div>
 
 <script>
@@ -201,8 +201,8 @@
     overlay.className = 'overlay ' + (win ? 'win' : 'lose');
     document.getElementById('ovImg').src = win ? 'anto.webp' : 'gira.png';
     document.getElementById('ovText').textContent = win
-      ? 'Congrats, you win! Anto got the jersey 🏀'
-      : 'Hey looser chiavati Gira';
+      ? 'Complimenti, hai vinto! Anto ha la sua maglia 🏀'
+      : 'Ehi perdente, chiavati Gira';
     overlay.hidden = false;
     document.getElementById('again').focus();
   }
